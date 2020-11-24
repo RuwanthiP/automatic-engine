@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Hookforms from './Components/Hookforms';
+// import Hookforms from './Components/Hookforms';
+// import FetchData from './Components/FetchData';
+//import App from './Components/App';
+import FetchData from './Components/FetchData';
+import Last from './Components/Last';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
    
-    <Hookforms/>
+  <Last/>
+    
     
   </React.StrictMode>,
   document.getElementById('root')
