@@ -49,8 +49,10 @@ function Last() {
       <p key={user.email}>{user.email}</p>
       <p key={user.dob.date}>{user.dob.date}</p>
       <p key={user.location.city}>{user.location.city}</p>
-      <p key={user.picture.medium}>{user.picture.medium}</p>
+      
+      <img class="img-fluid" width="60" src={user.picture.medium}/>
       <hr/>
+      
       </div>
 
       )
