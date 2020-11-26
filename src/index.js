@@ -2,14 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Last from './Components/Last';
+//import Last from './Components/Last';
+import UseMe from './Components/UseMe';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
    
-  <Last/>
+  
+  <UseMe/>
     
     
   </React.StrictMode>,
