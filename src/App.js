@@ -22,7 +22,7 @@ return(
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/useme">Users</Link>
             </li>
           </ul>
         </nav>
