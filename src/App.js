@@ -1,21 +1,38 @@
+import React from 'react';
+import {BrowserRouter, Route,Switch} from 'react-router-dom';
+import Home from './Components/Home';
+import AboutUs  from './Components/AboutUs';
+import UseMe from './Components/UseMe';
+import Navbar from './Components/Navbar';
 
-import React,{useState} from 'react'
-const HookCountt=()=>{
+function App() {
 
-  const intialCount=0;
-  const [count,setCount] = useState(intialCount)
+return(
+
   
-    return(
-      <div>
-        count:{count}
-        <button onClick={()=>setCount(intialCount)}>Reset</button>
-        <button onClick={()=>setCount(prevCount=>prevCount+1)}>+</button>
-        <button onClick={()=>setCount(prevCount=>prevCount-1)}>-</button>
-        
-      </div>
-    );
+          <div>
+            <BrowserRouter>
+              <Navbar/>
+              <Switch>
+              <Route path="/about">
+                  <AboutUs/>
+              </Route>
+              <Route path="/useme">
+                  <UseMe/>
+              </Route>
+              <Route path="/">
+                  <Home/>
+              </Route>
+              </Switch>
+              
+              
+            </BrowserRouter>
+          </div>
 
-  }
+     
   
+)
 
-export default HookCountt;
+}
+
+export default App;
