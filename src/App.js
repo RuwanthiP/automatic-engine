@@ -1,51 +1,35 @@
-import React from 'react';
-import {BrowserRouter, Route,Switch,Link} from 'react-router-dom';
-import Home from './Components/Home';
-import AboutUs  from './Components/AboutUs';
-import UseMe from './Components/UseMe';
+import React, {createContext,useReducer}from 'react'
+import Simple from './Components/Simple';
 
 
+export const MyContext = createContext();
+const initialState=0;
+const reducer=(state,action)=>{
+    switch (action) {
+        case 'increment':
+            return state+1
+        case 'decrement':
+            return state-1
+        case 'reset':
+            return initialState
+        default:
+            return state
+    }
+};
 function App() {
+   const [count,dispatch]=useReducer(reducer,initialState);
+  return (
+      <MyContext.Provider value={{countState:count,countDispatch:dispatch}}>
+    <div className="App">
+    <header className="App-header">
+        {count}
+        <Simple/>
+      </header>
+    </div>
+      </MyContext.Provider>
+  );
 
-return(
 
-  
-          <div>
-            <BrowserRouter>
-
-            <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/useme">Users</Link>
-            </li>
-          </ul>
-        </nav>
-              <Switch>
-              <Route path="/about">
-                  <AboutUs/>
-              </Route>
-              <Route path="/useme">
-                  <UseMe/>
-              </Route>
-              <Route path="/">
-                  <Home/>
-              </Route>
-              </Switch>
-              
-              
-            </BrowserRouter>
-          </div>
-
-     
-  
-)
-
-}
+  }
 
 export default App;
