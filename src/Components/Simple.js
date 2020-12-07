@@ -1,22 +1,18 @@
-import React, {useState,useContext} from 'react'
+import React, {useContext} from 'react'
 import {MyContext} from '../App'
+import Simple2 from './Simple2';
 
-function Simple(props) {
+function Simple (props) {
  const simpleContext=useContext(MyContext);
     return (
         <React.Fragment>
         <div>
-          <button onClick={()=>{simpleContext.countDispatch('increment')}}>
-              increment
+          <button onClick={()=>{simpleContext.setCount(15)}}>
+            Count Increment
           </button>
-            <button onClick={()=>{simpleContext.countDispatch('decrement')}}>
-                decrement
-            </button>
-            <button onClick={()=>{simpleContext.countDispatch('reset')}}>
-                Reset
-            </button>
+          <Simple2/>
         </div>
         </React.Fragment>
-    )
+    );
 }
-export default Simple
+export default Simple;
